@@ -1,6 +1,6 @@
-import TodoContainer from "./Todos/TodoContainer";
+import TodoContainer from "./Pages/Todos/TodoContainer";
 import './App.css'
-import PostContainer from "./Posts/PostContainer";
+import PostContainer from "./Pages/Posts/PostContainer";
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import ProtectedRoutes from "./ProtectedRoutes";

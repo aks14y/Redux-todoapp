@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import { deletePost } from '../actions/Actions';
+import { deletePost } from '../../actions/Actions';
 import {Button } from "reactstrap"
 
 function PostList(){

@@ -1,25 +1,26 @@
 import React, { useEffect } from "react";
-import {  fetchPosts } from "../actions/Actions";
-import PostForm from "../components/PostForm";
+import {  fetchTodos } from "../../actions/Actions";
+import TodoForm from "../../components/TodoForm";
 import { useDispatch, useSelector } from "react-redux";
-import PostList from "./PostList";
+import TodoList from "./TodoList";
 
-function PostContainer() {
+function TodoContainer() {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.PostReducer);
+  const data = useSelector((state) => state.TodoReducer);
 
   useEffect(() => {
-    dispatch(fetchPosts());
+    
+    dispatch(fetchTodos());
   }, [dispatch]);
 
   return (
     <div>
-      <PostForm/>
+      <TodoForm/>
       {
       data.loading ? (<h2>Loading</h2>) : data.error ? (<h2>{data.error}</h2>) : (
       <div>
         <div>
-          <PostList />
+          <TodoList />
         </div>
       </div>
       )}
@@ -27,4 +28,4 @@ function PostContainer() {
     </div>
   );
 }
-export default PostContainer;
+export default TodoContainer;
