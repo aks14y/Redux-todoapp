@@ -12,6 +12,7 @@ code {
     monospace;
 } */
 body{
-  margin:0;
-  text-align: center;
+  /* margin: 5px; */
+  padding-left: 10px;
 }
+

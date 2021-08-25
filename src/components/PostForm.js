@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addTodo, removeTodo } from "../actions/Actions";
+import { addPost, removePost } from "../actions/Actions";
 import { useDispatch} from "react-redux";
 import './FormStyle.scss'
 import {Button,Input } from "reactstrap"
@@ -11,28 +11,28 @@ const TodoForm = () => {
   
   
   const handleSubmit= ()=> {
-    dispatch(addTodo(inputData));
+    dispatch(addPost(inputData));
     setInputData("");
   }
 
   return (
     <>
-      <div className="row" >
+      <div className="row">
+        <br/>
         <Input size="sm"  className="mt-4 ms-3 me-3 w-25 col-1"
-          
           type="text"
           value={inputData}
           placeholder="Add item here"
           onChange={(e) => setInputData(e.target.value)}
         />
-        <Button color="primary" className=" mt-4 col-1" size="sm" onClick={handleSubmit}>
+        <Button className=" mt-4 col-1" size="sm" onClick={handleSubmit}>
           Add
         </Button>
       </div>
   
         
-      <div >
-        <Button color="primary" className="mt-2"  onClick={()=> dispatch(removeTodo())}>
+      <div className="mt-2">
+        <Button onClick={()=> dispatch(removePost())}>
           Checklist
         </Button>
       </div>

@@ -4,28 +4,28 @@ const initialData = {
   error: ''
 };
 
-const TodoReducer = (state = initialData, action) => {
+const PostReducer = (state = initialData, action) => {
   switch (action.type) {
-    case "FETCH_REQUEST":
+    case "FETCH_REQUEST_POST":
       return{
         loading: true
       }
     
-    case "FETCH_SUCCESS":
+    case "FETCH_SUCCESS_POST":
       return{
         loading: false,
         list : action.payload,
         error :''
       }
 
-    case "FETCH_FAILURE":
+    case "FETCH_FAILURE_POST":
       return{
         loading : false,
         list : [],
         error : action.payload
       }  
 
-    case "ADD_TODO":
+    case "ADD_POST":
       const { id, title } = action.payload;
 
       return {
@@ -38,7 +38,7 @@ const TodoReducer = (state = initialData, action) => {
           },
         ]
       };
-    case "DELETE_TODO":
+    case "DELETE_POST":
       const newList = state.list.filter((elem) => elem.id !== action.id);
 
       return {
@@ -46,7 +46,7 @@ const TodoReducer = (state = initialData, action) => {
         list: newList,
       };
 
-    case "REMOVE_TODO":
+    case "REMOVE_POST":
         return{
           ...state,
           list:[]
@@ -56,4 +56,4 @@ const TodoReducer = (state = initialData, action) => {
 
   }
 };
-export default TodoReducer;
+export default PostReducer;
