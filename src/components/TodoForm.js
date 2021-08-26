@@ -18,7 +18,7 @@ const TodoForm = () => {
   return (
     <>
       <div className="row" >
-        <Input size="sm"  className="mt-4 ms-3 me-3 w-25 col-1"
+        <Input bsSize="sm"  className="mt-4 ms-3 me-3 w-25 col-1"
           
           type="text"
           value={inputData}

@@ -1,4 +1,6 @@
 import axios from "axios";
+import { ENDPOINTS } from "../App";
+
 
 export const fetchRequest = () => {
   return{
@@ -65,7 +67,7 @@ export const removeTodo = () => {
 export const fetchTodos = () => {
   return (dispatch) => {
     dispatch(fetchRequest())
-    axios.get("https://jsonplaceholder.typicode.com/todos")
+    axios.get(ENDPOINTS.posts)
     .then(res => {
       const data=res.data
       dispatch(fetchSuccess(data))
@@ -103,7 +105,7 @@ export const removePost = () => {
 export const fetchPosts = () => {
   return (dispatch) => {
     dispatch(fetchRequestPost())
-    axios.get("https://jsonplaceholder.typicode.com/posts")
+    axios.get('/posts')
     .then(res => {
       const data=res.data
       dispatch(fetchSuccessPost(data))
