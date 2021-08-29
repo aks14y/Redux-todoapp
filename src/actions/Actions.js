@@ -67,7 +67,7 @@ export const removeTodo = () => {
 export const fetchTodos = () => {
   return (dispatch) => {
     dispatch(fetchRequest())
-    axios.get(ENDPOINTS.posts)
+    axios.get(ENDPOINTS.todos)
     .then(res => {
       const data=res.data
       dispatch(fetchSuccess(data))
@@ -105,7 +105,7 @@ export const removePost = () => {
 export const fetchPosts = () => {
   return (dispatch) => {
     dispatch(fetchRequestPost())
-    axios.get('/posts')
+    axios.get(ENDPOINTS.posts)
     .then(res => {
       const data=res.data
       dispatch(fetchSuccessPost(data))
@@ -117,5 +117,6 @@ export const fetchPosts = () => {
   }
 
 }
+
 
 
